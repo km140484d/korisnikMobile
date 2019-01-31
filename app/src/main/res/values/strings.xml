@@ -3,4 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="login">Prijava</string>
+    <string name="registration">Registracija</string>
+    <string name="handyman_search">Pretraga majstora</string>
 </resources>
