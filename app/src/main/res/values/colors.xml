@@ -5,4 +5,5 @@
     <color name="colorAccent">#00CCCC</color>
     <color name="colorMenuLightBlue">#3333FF</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrey">#bbbbbb</color>
 </resources>

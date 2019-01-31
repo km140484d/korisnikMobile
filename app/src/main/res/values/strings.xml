@@ -6,4 +6,7 @@
     <string name="login">Prijava</string>
     <string name="registration">Registracija</string>
     <string name="handyman_search">Pretraga majstora</string>
+    <string name="handyman_service">Servis majstora</string>
+    <string name="username">Nalog</string>
+    <string name="password">Lozinka</string>
 </resources>
