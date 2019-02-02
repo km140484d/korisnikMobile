@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingTop="30dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/jobSpinner"
+                android:text="@string/job"
+                android:textColor="@color/colorGrey" />
+            <Spinner
+                android:id="@+id/jobSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/search_layout_margin"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/urgencySeekBar"
+                android:text="@string/urgency"
+                android:textColor="@color/colorGrey" />
+            <SeekBar
+                android:id="@+id/urgencySeekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/search_layout_margin"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/searchRatingBar"
+                android:text="@string/rating"
+                android:textColor="@color/colorGrey" />
+            <RatingBar
+                android:id="@+id/searchRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1.0"
+                android:rating="4"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/search_layout_margin"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/jobSpinner"
+                android:text="@string/special_skills"
+                android:textColor="@color/colorGrey" />
+            <Spinner
+                android:id="@+id/specialSkillsSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/priceLinearLayout"
+                android:text="@string/price"
+                android:textColor="@color/colorGrey"/>
+            <LinearLayout
+                android:id="@+id/priceLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/search_layout_margin">
+                <EditText
+                    android:id="@+id/priceMinEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="?android:attr/ratingBarStyleSmall"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="1.5"
+                    android:layout_gravity="center"/>
+                <EditText
+                    android:id="@+id/priceMaxEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="?android:attr/ratingBarStyleSmall"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/dateLinearLayout"
+                android:text="@string/date"
+                android:textColor="@color/colorGrey"/>
+            <LinearLayout
+                android:id="@+id/dateLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/search_layout_margin">
+
+                <EditText
+                    android:id="@+id/dateMinEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_date_black"
+                    style="?android:attr/ratingBarStyleSmall"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="1.5"
+                    android:layout_gravity="center"/>
+                <EditText
+                    android:id="@+id/dateMaxEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_date_black"
+                    style="?android:attr/ratingBarStyleSmall"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/experienceLinearLayout"
+                android:text="@string/experience"
+                android:textColor="@color/colorGrey"/>
+            <LinearLayout
+                android:id="@+id/experienceLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/experienceMinEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="?android:attr/ratingBarStyleSmall"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="1.5"
+                    android:layout_gravity="center"/>
+                <EditText
+                    android:id="@+id/experienceMaxEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="?android:attr/ratingBarStyleSmall"/>
+            </LinearLayout>
+            <Button
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_css"
+                android:drawableRight="@drawable/ic_search_white"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/search"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:background="#ffffff"
+        android:text="@string/search_parameters"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+</RelativeLayout>

@@ -19,15 +19,12 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment = null;
             switch (item.getItemId()) {
                 case R.id.login_tab:
-//                    mTextMessage.setText(R.string.title_home);
                     fragment = new LoginFragment();
                     break;
                 case R.id.registration_tab:
-//                    mTextMessage.setText(R.string.title_dashboard);
                     fragment = new RegistrationFragment();
                     break;
                 case R.id.index_search_tab:
-//                    mTextMessage.setText(R.string.title_notifications);
                     fragment = new IndexSearchFragment();
             }
             return loadFragment(fragment);
@@ -53,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        loadFragment(new LoginFragment());
     }
 
 }
