@@ -1,17 +1,13 @@
 package com.example.mirjana.mobilekorisnik;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.os.*;
 import android.support.annotation.*;
 import android.support.design.widget.*;
 import android.support.v7.app.*;
 import android.view.*;
-import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
-
-    private RelativeLayout indexSearchRoot;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -21,15 +17,15 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment = null;
             switch (item.getItemId()) {
                 case R.id.login_tab:
-                    findViewById(R.id.indexSearchInclude).setVisibility(View.GONE);
+                    findViewById(R.id.index_search_include).setVisibility(View.GONE);
                     fragment = new LoginFragment();
                     break;
                 case R.id.registration_tab:
-                    findViewById(R.id.indexSearchInclude).setVisibility(View.GONE);
+                    findViewById(R.id.index_search_include).setVisibility(View.GONE);
                     fragment = new RegistrationFragment();
                     break;
                 case R.id.index_search_tab:
-                    findViewById(R.id.indexSearchInclude).setVisibility(View.VISIBLE);
+                    findViewById(R.id.index_search_include).setVisibility(View.VISIBLE);
                     fragment = new IndexSearchFragment();
             }
             return loadFragment(fragment);
@@ -41,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.indexFrameLayout, fragment)
+                    .replace(R.id.index_frame_layout, fragment)
                     .commit();
             return true;
         }
@@ -53,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.index_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         loadFragment(new LoginFragment());
 

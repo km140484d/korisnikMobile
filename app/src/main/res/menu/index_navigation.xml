@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/login_tab"
         android:icon="@drawable/ic_user_white"
@@ -16,5 +15,4 @@
         android:id="@+id/index_search_tab"
         android:icon="@drawable/ic_search_white"
         android:title="@string/handyman_search" />
-
 </menu>

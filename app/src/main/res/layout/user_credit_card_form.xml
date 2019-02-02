@@ -18,12 +18,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@id/creditCardNumberEdit"
+            android:labelFor="@id/credit_card_number_edit"
             android:text="@string/credit_card_number"
             android:textColor="@color/colorGrey" />
 
         <EditText
-            android:id="@+id/creditCardNumberEdit"
+            android:id="@+id/credit_card_number_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -41,12 +41,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:labelFor="@id/creditCardValidityEdit"
+                    android:labelFor="@id/credit_card_validity_edit"
                     android:text="@string/validity"
                     android:textColor="@color/colorGrey" />
 
                 <EditText
-                    android:id="@+id/creditCardValidityEdit"
+                    android:id="@+id/credit_card_validity_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -61,12 +61,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:labelFor="@id/creditCardCodeEdit"
+                    android:labelFor="@id/credit_card_code_edit"
                     android:text="@string/verification_code"
                     android:textColor="@color/colorGrey" />
 
                 <EditText
-                    android:id="@+id/creditCardCodeEdit"
+                    android:id="@+id/credit_card_code_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>

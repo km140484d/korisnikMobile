@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MobileKorisnik</string>
+    <string name="app_name">Majstorija</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -34,4 +34,10 @@
     <string name="date">Datum</string>
     <string name="experience">Iskustvo</string>
     <string name="search">Pretraži</string>
+    <string name="requests">Zahtevi</string>
+    <string name="edit">Izmena</string>
+    <string name="logout">Odjava</string>
+    <string name="favorites">Omiljeni</string>
+    <string name="profile">Profil</string>
+    <string name="request">Zahtev</string>
 </resources>

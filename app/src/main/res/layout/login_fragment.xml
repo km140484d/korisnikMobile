@@ -39,12 +39,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:labelFor="@id/usernameEdit"
+                    android:labelFor="@id/username_edit"
                     android:text="@string/username"
                     android:textColor="@color/colorGrey" />
 
                 <EditText
-                    android:id="@+id/usernameEdit"
+                    android:id="@+id/username_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/ic_user" />
@@ -52,12 +52,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:labelFor="@id/passwordEdit"
+                    android:labelFor="@id/password_edit"
                     android:text="@string/password"
                     android:textColor="@color/colorGrey" />
 
                 <EditText
-                    android:id="@+id/passwordEdit"
+                    android:id="@+id/password_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/ic_eye"
@@ -65,6 +65,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/login_button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_css"
@@ -79,6 +80,7 @@
                 android:paddingRight="15dp"/>
 
             <Button
+                android:id="@+id/registration_button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_css"

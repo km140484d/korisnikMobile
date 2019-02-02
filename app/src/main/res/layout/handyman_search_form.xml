@@ -31,7 +31,7 @@
                 android:background="?android:attr/dividerHorizontal" />
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/rootIndexSearchLayout"
+                android:id="@+id/root_index_search_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -57,12 +57,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:labelFor="@id/jobSpinner"
+                            android:labelFor="@id/job_spinner"
                             android:text="@string/job"
                             android:textColor="@color/colorGrey" />
 
                         <Spinner
-                            android:id="@+id/jobSpinner"
+                            android:id="@+id/job_spinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/search_layout_margin" />
@@ -70,12 +70,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:labelFor="@id/urgencySeekBar"
+                            android:labelFor="@id/urgency_seek_bar"
                             android:text="@string/urgency"
                             android:textColor="@color/colorGrey" />
 
                         <SeekBar
-                            android:id="@+id/urgencySeekBar"
+                            android:id="@+id/urgency_seek_bar"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/search_layout_margin" />
@@ -83,12 +83,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:labelFor="@id/searchRatingBar"
+                            android:labelFor="@id/search_rating_bar"
                             android:text="@string/rating"
                             android:textColor="@color/colorGrey" />
 
                         <RatingBar
-                            android:id="@+id/searchRatingBar"
+                            android:id="@+id/search_rating_bar"
                             style="?android:attr/ratingBarStyleSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -101,12 +101,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:labelFor="@id/jobSpinner"
+                            android:labelFor="@id/special_skills_spinner"
                             android:text="@string/special_skills"
                             android:textColor="@color/colorGrey" />
 
                         <Spinner
-                            android:id="@+id/specialSkillsSpinner"
+                            android:id="@+id/special_skills_spinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
@@ -122,18 +122,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:labelFor="@id/priceLinearLayout"
+                            android:labelFor="@id/price_linear_layout"
                             android:text="@string/price"
                             android:textColor="@color/colorGrey" />
 
                         <LinearLayout
-                            android:id="@+id/priceLinearLayout"
+                            android:id="@+id/price_linear_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/priceMinEdit"
+                                android:id="@+id/price_min_edit"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -149,7 +149,7 @@
                                 android:textColor="@color/colorPrimaryDark" />
 
                             <EditText
-                                android:id="@+id/priceMaxEdit"
+                                android:id="@+id/price_max_edit"
                                 android:textSize="10sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -159,18 +159,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:labelFor="@id/dateLinearLayout"
+                            android:labelFor="@id/date_linear_layout"
                             android:text="@string/date"
                             android:textColor="@color/colorGrey" />
 
                         <LinearLayout
-                            android:id="@+id/dateLinearLayout"
+                            android:id="@+id/date_linear_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/dateMinEdit"
+                                android:id="@+id/date_min_edit"
                                 android:textSize="10sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -187,7 +187,7 @@
                                 android:textColor="@color/colorPrimaryDark" />
 
                             <EditText
-                                android:id="@+id/dateMaxEdit"
+                                android:id="@+id/date_max_edit"
                                 android:textSize="10sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -198,18 +198,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:labelFor="@id/experienceLinearLayout"
+                            android:labelFor="@id/experience_linear_layout"
                             android:text="@string/experience"
                             android:textColor="@color/colorGrey" />
 
                         <LinearLayout
-                            android:id="@+id/experienceLinearLayout"
+                            android:id="@+id/experience_linear_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/experienceMinEdit"
+                                android:id="@+id/experience_min_edit"
                                 android:textSize="10sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -225,7 +225,7 @@
                                 android:textColor="@color/colorPrimaryDark" />
 
                             <EditText
-                                android:id="@+id/experienceMaxEdit"
+                                android:id="@+id/experience_max_edit"
                                 android:textSize="10sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"

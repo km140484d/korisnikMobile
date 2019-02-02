@@ -23,12 +23,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/usernameRegEdit"
+                android:labelFor="@id/username_reg_edit"
                 android:text="@string/username"
                 android:textColor="@color/colorGrey" />
 
             <EditText
-                android:id="@+id/usernameRegEdit"
+                android:id="@+id/username_reg_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -43,24 +43,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/passwordRegEdit"
+                android:labelFor="@id/password_reg_edit"
                 android:text="@string/password"
                 android:textColor="@color/colorGrey" />
 
             <EditText
-                android:id="@+id/passwordRegEdit"
+                android:id="@+id/password_reg_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/passwordConfirmedRegEdit"
+                android:labelFor="@id/password_confirmed_reg_edit"
                 android:text="@string/password_confirmed"
                 android:textColor="@color/colorGrey" />
 
             <EditText
-                android:id="@+id/passwordConfirmedRegEdit"
+                android:id="@+id/password_confirmed_reg_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
