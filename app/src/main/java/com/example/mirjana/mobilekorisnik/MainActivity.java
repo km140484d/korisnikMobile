@@ -11,6 +11,8 @@ import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
 
+    private RelativeLayout indexSearchRoot;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -19,12 +21,15 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment = null;
             switch (item.getItemId()) {
                 case R.id.login_tab:
+                    findViewById(R.id.indexSearchInclude).setVisibility(View.GONE);
                     fragment = new LoginFragment();
                     break;
                 case R.id.registration_tab:
+                    findViewById(R.id.indexSearchInclude).setVisibility(View.GONE);
                     fragment = new RegistrationFragment();
                     break;
                 case R.id.index_search_tab:
+                    findViewById(R.id.indexSearchInclude).setVisibility(View.VISIBLE);
                     fragment = new IndexSearchFragment();
             }
             return loadFragment(fragment);
@@ -51,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         loadFragment(new LoginFragment());
+
     }
 
 }
