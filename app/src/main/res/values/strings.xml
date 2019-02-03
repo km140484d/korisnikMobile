@@ -40,4 +40,7 @@
     <string name="favorites">Omiljeni</string>
     <string name="profile">Profil</string>
     <string name="request">Zahtev</string>
+    <string name="profile_view">Pregled profila</string>
+    <string name="contact">Kontakt</string>
+    <string name="job_hyphen">-%1$s RSD-</string>
 </resources>

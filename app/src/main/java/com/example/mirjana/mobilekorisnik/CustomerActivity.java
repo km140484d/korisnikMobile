@@ -18,9 +18,10 @@ public class CustomerActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment = null;
+            boolean visible = false;
             switch (item.getItemId()) {
                 case R.id.customer_search_tab:
-                    findViewById(R.id.customer_search_include).setVisibility(View.VISIBLE);
+                    visible = true;
                     fragment = new CustomerSearchFragment();
                     break;
                 case R.id.customer_requests_tab:
@@ -37,17 +38,17 @@ public class CustomerActivity extends AppCompatActivity {
                     break;
                 case R.id.customer_log_out_tab:
                     Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                    //intent.putExtra(EXTRA_MESSAGE, message);
                     startActivity(intent);
                     break;
             }
-            return loadFragment(fragment);
+            return loadFragment(fragment, visible);
         }
     };
 
-    private boolean loadFragment(Fragment fragment) {
+    public boolean loadFragment(Fragment fragment, boolean visible) {
         //switching fragment
         if (fragment != null) {
+            findViewById(R.id.customer_search_include).setVisibility(visible ? View.VISIBLE : View.GONE);
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.customer_frame_layout, fragment)
@@ -64,7 +65,7 @@ public class CustomerActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = findViewById(R.id.customer_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        loadFragment(new CustomerSearchFragment());
+        loadFragment(new CustomerSearchFragment(),true);
 
     }
 
