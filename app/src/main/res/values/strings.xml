@@ -57,4 +57,9 @@
     <string name="cancel_request">Otkaži</string>
     <string name="rate">Oceni</string>
     <string name="comment">Komentar</string>
+    <string name="favorite_handymen">Pregled odabranih majstora</string>
+    <string name="statistic">Statistika</string>
+    <string name="requests_realized">Realizovani zahtevi</string>
+    <string name="requests_denied">Zahtevi odbijeni</string>
+    <string name="request_archive">Evidencija zahteva</string>
 </resources>

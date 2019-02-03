@@ -48,7 +48,7 @@ public class DB {
                 "sl140283d", "123", "Pozeljan rad vikendom.");
         currentCustomer.setCreditCard(currentCustomer.new CreditCard("9999567822224567", date, "111", 8561.23));
         customers.add(currentCustomer);
-        currentCustomer = null;
+        //currentCustomer = null;
 
         //OCCUPATIONS
         occupations.add(new Occupation("Električar")); //0
@@ -104,6 +104,7 @@ public class DB {
         handymen.add(currentHandyman);
 
         currentHandyman = null;
+
     }
 
     public static List<Customer> getCustomers() {
