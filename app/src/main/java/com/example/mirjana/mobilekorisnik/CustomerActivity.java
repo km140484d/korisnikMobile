@@ -48,11 +48,11 @@ public class CustomerActivity extends AppCompatActivity {
     public boolean loadFragment(Fragment fragment, boolean visible) {
         //switching fragment
         if (fragment != null) {
-            findViewById(R.id.customer_search_include).setVisibility(visible ? View.VISIBLE : View.GONE);
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.customer_frame_layout, fragment)
-                    .commit();
+                    .addToBackStack(null).commit();
+            findViewById(R.id.customer_search_include).setVisibility(visible ? View.VISIBLE : View.GONE);
             return true;
         }
         return false;

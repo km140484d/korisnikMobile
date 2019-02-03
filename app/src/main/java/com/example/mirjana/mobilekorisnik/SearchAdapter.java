@@ -62,7 +62,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             ratingBar = itemView.findViewById(R.id.search_item_rating_bar);
             profileButton = itemView.findViewById(R.id.profile_item_button);
             profileButton.setOnClickListener(c -> {
-                // getActivity().findViewById(R.id.customer_search_include).setVisibility(View.GONE);
                 ((CustomerActivity)(context)).loadFragment(new HandymanProfileFragment(), false);
             });
             requestButton = itemView.findViewById(R.id.mail_item_button);

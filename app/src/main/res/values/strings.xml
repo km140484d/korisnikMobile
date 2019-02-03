@@ -43,4 +43,18 @@
     <string name="profile_view">Pregled profila</string>
     <string name="contact">Kontakt</string>
     <string name="job_hyphen">-%1$s RSD-</string>
+    <string name="sending_request">Slanje zahteva</string>
+    <string name="address">Adresa</string>
+    <string name="description">Opis</string>
+    <string name="time">Vreme</string>
+    <string name="payment">Plaćanje</string>
+    <string name="cash">Keš</string>
+    <string name="county">Opština</string>
+    <string name="street">Ulica</string>
+    <string name="send">Pošalji</string>
+    <string name="request_history">Pregled zahteva</string>
+    <string name="status">Stanje</string>
+    <string name="cancel_request">Otkaži</string>
+    <string name="rate">Oceni</string>
+    <string name="comment">Komentar</string>
 </resources>

@@ -1,32 +1,35 @@
 package com.example.mirjana.mobilekorisnik;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import android.support.annotation.*;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v7.widget.*;
+import android.view.*;
+import android.widget.*;
 
-import database.DB;
+import database.*;
 
 public class HandymanProfileFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
+    private Button handymanRequestButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.handyman_profile, container, false);
+        View view = inflater.inflate(R.layout.handyman_profile_fragment, container, false);
+        //jobs
         mRecyclerView = view.findViewById(R.id.handyman_profile_recycler);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mAdapter = new ProfileJobAdapter(DB.getDBInstance().getHandymen().get(1).getJobs(), getContext());
         mRecyclerView.setAdapter(mAdapter);
+        //send handyman request
+        handymanRequestButton = view.findViewById(R.id.handyman_request_button);
+        handymanRequestButton.setOnClickListener(o ->{
+            ((CustomerActivity)(getActivity())).loadFragment(new HandymanRequestFragment(), false);
+        });
         return view;
     }
 }
