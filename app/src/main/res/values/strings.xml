@@ -62,4 +62,5 @@
     <string name="requests_realized">Realizovani zahtevi</string>
     <string name="requests_denied">Zahtevi odbijeni</string>
     <string name="request_archive">Evidencija zahteva</string>
+    <string name="update_account">Održavanje naloga</string>
 </resources>
