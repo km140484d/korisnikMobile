@@ -103,7 +103,7 @@ public class DB {
         currentHandyman.setJobs(jobs);
         handymen.add(currentHandyman);
 
-        currentHandyman = null;
+        //currentHandyman = null;
 
     }
 

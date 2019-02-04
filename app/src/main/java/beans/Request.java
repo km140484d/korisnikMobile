@@ -48,6 +48,7 @@ public class Request implements Comparable<Request>{
 
     private static int stId = 0;
     private int id = ++stId;
+    private Customer customer;
     private Handyman handyman;
     private Handyman.Job job;
     private Address address;
@@ -60,9 +61,10 @@ public class Request implements Comparable<Request>{
     private String comment;
     private Date canceledDate;
 
-    public Request(Handyman handyman, Handyman.Job job, String county, String streetNumber,
+    public Request(Customer customer, Handyman handyman, Handyman.Job job, String county, String streetNumber,
                    Date requestCreatedDate, Date requestDate, Double urgency,
                    Boolean cash) {
+        this.customer = customer;
         this.handyman = handyman;
         this.job = job;
         this.address = new Address(county, streetNumber);
@@ -70,6 +72,8 @@ public class Request implements Comparable<Request>{
         this.requestDate = requestDate;
         this.urgency = urgency;
         this.cash = cash;
+        customer.addRequestArchive(this);
+        handyman.addRequest(this);
     }
 
     public int getId() {
@@ -78,6 +82,14 @@ public class Request implements Comparable<Request>{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public Handyman getHandyman() {

@@ -78,7 +78,11 @@ public class Handyman extends User{
     }
 
     public void addRequest(Request request){
-        requests.add(request);
+        requests.add(0, request);
+    }
+
+    public List<Request> getRequests() {
+        return requests;
     }
 
     public String jobsToString(){

@@ -63,4 +63,9 @@
     <string name="requests_denied">Zahtevi odbijeni</string>
     <string name="request_archive">Evidencija zahteva</string>
     <string name="update_account">Održavanje naloga</string>
+    <string name="request_search">Pretraga zahteva</string>
+    <string name="location">Lokacija</string>
+    <string name="customer_rank">Rang kupca</string>
+    <string name="accept">Prihvati</string>
+    <string name="deny">Odbaci</string>
 </resources>
