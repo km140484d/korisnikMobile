@@ -20,7 +20,7 @@
 
     <include
         android:id="@+id/customer_search_include"
-        layout="@layout/handyman_search_form"
+        layout="@layout/index_handyman_search_form"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"/>

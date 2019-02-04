@@ -9,7 +9,7 @@ import android.widget.*;
 
 import database.*;
 
-public class HandymanProfileFragment extends Fragment {
+public class CustomerHandymanProfileFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -18,7 +18,7 @@ public class HandymanProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.handyman_profile_fragment, container, false);
+        View view = inflater.inflate(R.layout.customer_handyman_profile_fragment, container, false);
         //jobs
         mRecyclerView = view.findViewById(R.id.handyman_profile_recycler);
         mRecyclerView.setHasFixedSize(true);
@@ -28,7 +28,7 @@ public class HandymanProfileFragment extends Fragment {
         //send handyman request
         handymanRequestButton = view.findViewById(R.id.handyman_request_button);
         handymanRequestButton.setOnClickListener(o ->{
-            ((CustomerActivity)(getActivity())).loadFragment(new HandymanRequestFragment(), false);
+            ((CustomerActivity)(getActivity())).loadFragment(new CustomerHandymanRequestFragment(), false);
         });
         return view;
     }

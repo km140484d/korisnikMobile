@@ -24,7 +24,7 @@ public class ProfileJobAdapter extends RecyclerView.Adapter<ProfileJobAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.handyman_profile_item, viewGroup, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.customer_handyman_profile_item, viewGroup, false);
         return new ViewHolder(view);
     }
 

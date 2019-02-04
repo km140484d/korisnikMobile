@@ -2,13 +2,11 @@ package com.example.mirjana.mobilekorisnik;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.os.*;
 import android.support.annotation.*;
 import android.support.design.widget.*;
 import android.support.v7.app.*;
 import android.view.*;
-import android.widget.*;
 
 public class CustomerActivity extends AppCompatActivity {
 
@@ -37,7 +35,7 @@ public class CustomerActivity extends AppCompatActivity {
                     fragment = new CustomerEditFragment();
                     break;
                 case R.id.customer_log_out_tab:
-                    Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                    Intent intent = new Intent(getBaseContext(), IndexActivity.class);
                     startActivity(intent);
                     break;
             }

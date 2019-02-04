@@ -8,7 +8,7 @@ import android.view.*;
 import android.widget.*;
 
 
-public class LoginFragment extends Fragment {
+public class IndexLoginFragment extends Fragment {
 
     private Button loginButton;
 
@@ -18,7 +18,7 @@ public class LoginFragment extends Fragment {
         View view = inflater.inflate(R.layout.index_login_fragment, container, false);
         loginButton = view.findViewById(R.id.login_button);
         loginButton.setOnClickListener(l ->{
-            Intent intent = new Intent(getActivity(), CustomerActivity.class);
+            Intent intent = new Intent(getActivity(), HandymanActivity.class);
             startActivity(intent);
         });
         return view;

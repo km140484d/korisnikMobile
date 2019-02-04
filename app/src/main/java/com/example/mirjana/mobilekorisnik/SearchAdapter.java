@@ -26,7 +26,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).
-                inflate(R.layout.search_item, viewGroup, false);
+                inflate(R.layout.index_search_item, viewGroup, false);
         return new ViewHolder(view);
     }
 
@@ -62,7 +62,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             ratingBar = itemView.findViewById(R.id.search_item_rating_bar);
             profileButton = itemView.findViewById(R.id.profile_item_button);
             profileButton.setOnClickListener(c -> {
-                ((CustomerActivity)(context)).loadFragment(new HandymanProfileFragment(), false);
+                ((CustomerActivity)(context)).loadFragment(new CustomerHandymanProfileFragment(), false);
             });
             requestButton = itemView.findViewById(R.id.mail_item_button);
         }

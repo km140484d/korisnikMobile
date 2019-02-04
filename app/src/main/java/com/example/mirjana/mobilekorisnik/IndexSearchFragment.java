@@ -18,7 +18,7 @@ public class IndexSearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.index_search_fragment, container, false);
+        View view = inflater.inflate(R.layout.index_search_handymen_fragment, container, false);
         mRecyclerView = view.findViewById(R.id.index_search_recycler);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

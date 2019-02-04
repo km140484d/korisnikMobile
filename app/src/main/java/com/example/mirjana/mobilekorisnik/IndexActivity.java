@@ -7,7 +7,7 @@ import android.support.design.widget.*;
 import android.support.v7.app.*;
 import android.view.*;
 
-public class MainActivity extends AppCompatActivity {
+public class IndexActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.login_tab:
                     findViewById(R.id.index_search_include).setVisibility(View.GONE);
-                    fragment = new LoginFragment();
+                    fragment = new IndexLoginFragment();
                     break;
                 case R.id.registration_tab:
                     findViewById(R.id.index_search_include).setVisibility(View.GONE);
-                    fragment = new RegistrationFragment();
+                    fragment = new IndexRegistrationFragment();
                     break;
                 case R.id.index_search_tab:
                     findViewById(R.id.index_search_include).setVisibility(View.VISIBLE);
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = findViewById(R.id.index_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        loadFragment(new LoginFragment());
+        loadFragment(new IndexLoginFragment());
 
     }
 
