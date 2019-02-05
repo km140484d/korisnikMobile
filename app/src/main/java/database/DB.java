@@ -39,13 +39,13 @@ public class DB {
         calendar.set(2020, Calendar.FEBRUARY, 1);
         Date date = calendar.getTime();
         currentCustomer = new Customer("Mirjana", "Konjikovac", "0612345678", "mirjanakonjikovac@gmail.com",
-                "km140484d", "123", "Odgovaraju popodnevni časovi za popravke.");
+                "mirjana", "123", "Odgovaraju popodnevni časovi za popravke.");
         currentCustomer.setCreditCard(currentCustomer.new CreditCard("1234567891234567", date, "123", 10230.56));
         customers.add(currentCustomer);
         calendar.set(2019, Calendar.MAY, 1);
         date = calendar.getTime();
         currentCustomer = new Customer("Luka", "Savić", "0619599678", "lukasavic@yahoo.com",
-                "sl140283d", "123", "Pozeljan rad vikendom.");
+                "luka", "123", "Pozeljan rad vikendom.");
         currentCustomer.setCreditCard(currentCustomer.new CreditCard("9999567822224567", date, "111", 8561.23));
         customers.add(currentCustomer);
         //currentCustomer = null;
@@ -65,13 +65,13 @@ public class DB {
 
         //HANDYMEN
         currentHandyman = new Handyman("Elena", "Vuceljić", "06911122330", "elena@hotmail.com",
-                skills.subList(0, 1));
+                "elenav", "123", skills.subList(0, 1));
         jobs.add(currentHandyman.new Job(occupations.get(0), 2000.00, 5, 4));
         currentHandyman.setJobs(jobs);
         handymen.add(currentHandyman);
 
         currentHandyman = new Handyman("Milica", "Bulatović", "06922277335", "mica@gmail.com",
-                skills.subList(0, 2));
+                "milicab", "123", skills.subList(0, 2));
         jobs = new ArrayList<>();
         jobs.add(currentHandyman.new Job(occupations.get(0), 1800.00, 8, 4));
         jobs.add(currentHandyman.new Job(occupations.get(1), 1300.00, 2, 3));
@@ -80,7 +80,7 @@ public class DB {
         handymen.add(currentHandyman);
 
         currentHandyman = new Handyman("Dane", "Nikolić", "0645556667", "dane@gmail.com",
-                skills.subList(2, 3));
+                "danen", "123", skills.subList(2, 3));
         jobs = new ArrayList<>();
         jobs.add(currentHandyman.new Job(occupations.get(1), 1500.00, 6, 4));
         jobs.add(currentHandyman.new Job(occupations.get(2), 2100.00, 12, 5));
@@ -88,7 +88,7 @@ public class DB {
         handymen.add(currentHandyman);
 
         currentHandyman = new Handyman("Djordje", "Danicic", "0645556667", "djolence@gmail.com",
-                skills.subList(2, 3));
+                "djordjed", "123", skills.subList(2, 3));
         jobs = new ArrayList<>();
         jobs.add(currentHandyman.new Job(occupations.get(0), 2300.00, 1, 2));
         jobs.add(currentHandyman.new Job(occupations.get(2), 2500.00, 7, 5));
@@ -96,7 +96,7 @@ public class DB {
         handymen.add(currentHandyman);
 
         currentHandyman = new Handyman("Dragana", "Tanic", "0649988665", "dragce@gmail.com",
-                skills.subList(1, 3));
+                "draganat", "123", skills.subList(1, 3));
         jobs = new ArrayList<>();
         jobs.add(currentHandyman.new Job(occupations.get(1), 1950.00, 4, 4));
         jobs.add(currentHandyman.new Job(occupations.get(3), 2300.00, 5, 5));
@@ -125,6 +125,10 @@ public class DB {
 
     public static List<Handyman> getHandymen() {
         return handymen;
+    }
+
+    public void addHandyman(Handyman handyman) {
+        handymen.add(handyman);
     }
 
     public static Customer getCurrentCustomer() {
@@ -169,4 +173,22 @@ public class DB {
         Collections.sort(requests);
         return (requests.size() > 3) ? requests.subList(0, 3) : requests;
     }
+
+    public User findUser(String username, String password){
+        User.Account account;
+        for(Customer customer: customers){
+            account = customer.getAccount();
+            if (account.getUsername().equals(username)){
+                return customer;
+            }
+        }
+        for (Handyman handyman: handymen){
+            account = handyman.getAccount();
+            if (account.getUsername().equals(username))
+                return handyman;
+        }
+        return null;
+    }
+
+
 }

@@ -61,11 +61,10 @@
                         android:text="@string/handyman" />
                 </RadioGroup>
 
-                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    android:padding="10dp">
+                    android:layout_margin="5dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -73,13 +72,12 @@
                         android:background="@drawable/border"
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal"
-                        android:padding="15dp">
+                        android:padding="10dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="5dp"
                             android:layout_margin="5dp"
                             android:layout_weight="1">
                             <TextView
@@ -92,7 +90,8 @@
                             <EditText
                                 android:id="@+id/name_edit"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -104,7 +103,8 @@
                             <EditText
                                 android:id="@+id/surname_edit"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"/>
 
                             <EditText
                                 android:id="@+id/account_edit"
@@ -118,7 +118,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="5dp"
                             android:layout_margin="5dp"
                             android:layout_weight="1">
                             <TextView
@@ -131,7 +130,8 @@
                             <EditText
                                 android:id="@+id/phone_edit"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -143,15 +143,23 @@
                             <EditText
                                 android:id="@+id/email_edit"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"/>
 
                             <EditText
                                 android:id="@+id/credit_card_edit"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/credit_card"
-                                android:drawableRight="@drawable/ic_credit_card"
-                                />
+                                android:hint="@string/card"
+                                android:drawableRight="@drawable/ic_credit_card"/>
+
+                            <EditText
+                                android:id="@+id/job_edit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/job"
+                                android:drawableRight="@drawable/ic_job_black"
+                                android:visibility="gone"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -168,11 +176,27 @@
                         android:textColor="@color/colorPrimary"/>
 
                 </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comment"
+                    android:paddingLeft="20dp"/>
+                <EditText
+                    android:id="@+id/registration_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="2"
+                    android:maxLines="4"
+                    android:padding="3dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal">
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp">
                     <Button
+                        android:id="@+id/user_registration_save"
                         android:layout_width="155dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -186,6 +210,7 @@
                         android:textSize="16sp" />
 
                     <Button
+                        android:id="@+id/user_registration_cancel"
                         android:layout_width="155dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"

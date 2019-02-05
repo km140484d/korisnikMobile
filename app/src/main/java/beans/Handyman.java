@@ -56,8 +56,10 @@ public class Handyman extends User{
     private List<Job> jobs = new ArrayList<>();
     private List<Request> requests = new ArrayList<>();
 
-    public Handyman(String name, String surname, String phone, String email, List<Skill> skills) {
-        super(name, surname, phone, email);
+    public Handyman(){}
+
+    public Handyman(String name, String surname, String phone, String email, String username, String password, List<Skill> skills) {
+        super(name, surname, phone, email, username, password);
         this.skills = skills;
     }
 

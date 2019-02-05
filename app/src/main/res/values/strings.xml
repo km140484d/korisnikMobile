@@ -70,4 +70,8 @@
     <string name="deny">Odbaci</string>
     <string name="customer_profile">Profil kupca</string>
     <string name="customer_history">Pregled kupaca</string>
+    <string name="username_empty">Morate uneti korisnički nalog!</string>
+    <string name="password_empty">Morate uneti lozinku!</string>
+    <string name="invalid_user">Ne postoji korisnik sa unetim nalogom!</string>
+    <string name="invalid_password">Pogrešna lozinka.</string>
 </resources>

@@ -1,18 +1,49 @@
 package beans;
 
 public class User {
+
+    public class Account{
+        private String username;
+        private String password;
+
+        public Account(String username, String password) {
+            this.username = username;
+            this.password = password;
+        }
+
+        public String getUsername() {
+            return username;
+        }
+
+        public void setUsername(String username) {
+            this.username = username;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
+    }
+
     private static int stId = 0;
     private int id = ++stId;
     private String name;
     private String surname;
     private String phone;
     private String email;
+    private Account account;
 
-    public User(String name, String surname, String phone, String email) {
+    public User(){}
+
+    public User(String name, String surname, String phone, String email, String username, String password) {
         this.name = name;
         this.surname = surname;
         this.phone = phone;
         this.email = email;
+        this.account = new Account(username, password);
     }
 
     public int getId() {
@@ -53,5 +84,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

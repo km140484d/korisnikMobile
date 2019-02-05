@@ -54,43 +54,19 @@ public class Customer extends User{
         }
     }
 
-    public class Account{
-        private String username;
-        private String password;
 
-        public Account(String username, String password) {
-            this.username = username;
-            this.password = password;
-        }
-
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-    }
 
     private CreditCard creditCard;
-    private Account account;
     private String comment;
     private Integer rank;
     private List<Request> requests = new ArrayList<>();
     private List<Handyman> favoriteHandymen = new ArrayList<>();
 
+    public Customer(){}
+
     public Customer(String name, String surname, String phone, String email,
                     String username, String password, String comment){
-        super(name, surname, phone, email);
-        this.account = new Account(username, password);
+        super(name, surname, phone, email, username, password);
         this.comment = comment;
         this.rank = 1;
     }
@@ -101,14 +77,6 @@ public class Customer extends User{
 
     public void setCreditCard(CreditCard creditCard) {
         this.creditCard = creditCard;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
     }
 
     public String getComment() {
