@@ -69,4 +69,5 @@
     <string name="accept">Prihvati</string>
     <string name="deny">Odbaci</string>
     <string name="customer_profile">Profil kupca</string>
+    <string name="customer_history">Pregled kupaca</string>
 </resources>

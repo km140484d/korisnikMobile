@@ -83,6 +83,7 @@ public class Customer extends User{
     private CreditCard creditCard;
     private Account account;
     private String comment;
+    private Integer rank;
     private List<Request> requests = new ArrayList<>();
     private List<Handyman> favoriteHandymen = new ArrayList<>();
 
@@ -91,6 +92,7 @@ public class Customer extends User{
         super(name, surname, phone, email);
         this.account = new Account(username, password);
         this.comment = comment;
+        this.rank = 1;
     }
 
     public CreditCard getCreditCard() {
@@ -115,6 +117,14 @@ public class Customer extends User{
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
     }
 
     public void addRequestArchive(Request request){

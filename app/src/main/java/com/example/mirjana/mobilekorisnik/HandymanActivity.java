@@ -23,7 +23,7 @@ public class HandymanActivity extends AppCompatActivity {
                     break;
                 case R.id.handyman_requests_tab:
                     //findViewById(R.id.index_search_include).setVisibility(View.GONE);
-                    fragment = new HandymanRequestsFragment();
+                    fragment = new HandymanCustomersFragment();
                     break;
                 case R.id.handyman_edit_tab:
                     //findViewById(R.id.index_search_include).setVisibility(View.GONE);
