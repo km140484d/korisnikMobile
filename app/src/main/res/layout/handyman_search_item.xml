@@ -71,7 +71,7 @@
                     android:background="@drawable/grey_button_css"
                     android:drawableRight="@drawable/ic_mail_black"
                     android:paddingLeft="15dp"
-                    android:text="@string/profile"
+                    android:text="@string/request"
                     android:textAlignment="textStart"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="16sp"

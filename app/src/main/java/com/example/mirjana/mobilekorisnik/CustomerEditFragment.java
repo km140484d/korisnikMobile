@@ -10,7 +10,7 @@ public class CustomerEditFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.customer_edit_fragment, container, false);
+        View view = inflater.inflate(R.layout.user_edit_fragment, container, false);
         return view;
     }
 }

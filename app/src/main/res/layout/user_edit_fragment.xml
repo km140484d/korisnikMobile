@@ -83,6 +83,14 @@
                                 android:layout_height="wrap_content"
                                 android:textSize="12sp"/>
 
+                            <EditText
+                                android:id="@+id/handyman_jobs_edit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/ic_job_black"
+                                android:hint="@string/credit_card"
+                                android:textSize="12sp"
+                                android:visibility="gone"/>
 
                         </LinearLayout>
 

@@ -68,4 +68,5 @@
     <string name="customer_rank">Rang kupca</string>
     <string name="accept">Prihvati</string>
     <string name="deny">Odbaci</string>
+    <string name="customer_profile">Profil kupca</string>
 </resources>
