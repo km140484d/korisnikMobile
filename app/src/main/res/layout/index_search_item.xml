@@ -28,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginLeft="20dp"
+                android:padding="10dp"
                 android:layout_centerVertical="true">
                 <TextView
                     android:id="@+id/search_item_name"
@@ -44,16 +45,20 @@
                     android:maxLines="3"
                     android:text="asdasda"
                     android:textColor="@color/colorPrimaryDark"
-                    android:layout_marginBottom="5dp"/>
+                    android:layout_marginBottom="10dp"/>
+
                 <RatingBar
                     android:id="@+id/search_item_rating_bar"
                     style="?android:attr/ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/search_layout_margin"
+                    android:layout_marginLeft="10dp"
                     android:numStars="5"
                     android:rating="4"
-                    android:stepSize="1.0"/>
+                    android:stepSize="1.0"
+                    android:scaleX="1.25"
+                    android:scaleY="1.25"/>
             </LinearLayout>
 
             <LinearLayout

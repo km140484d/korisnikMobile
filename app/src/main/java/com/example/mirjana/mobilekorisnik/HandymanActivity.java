@@ -18,15 +18,12 @@ public class HandymanActivity extends AppCompatActivity {
             Fragment fragment = null;
             switch (item.getItemId()) {
                 case R.id.handyman_search_tab:
-                    //findViewById(R.id.index_search_include).setVisibility(View.VISIBLE);
                     fragment = new HandymanSearchFragment();
                     break;
                 case R.id.handyman_requests_tab:
-                    //findViewById(R.id.index_search_include).setVisibility(View.GONE);
                     fragment = new HandymanCustomersFragment();
                     break;
                 case R.id.handyman_edit_tab:
-                    //findViewById(R.id.index_search_include).setVisibility(View.GONE);
                     fragment = new HandymanEditFragment();
                     break;
                 case R.id.handyman_log_out_tab:

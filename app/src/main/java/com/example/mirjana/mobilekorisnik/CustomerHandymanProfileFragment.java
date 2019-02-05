@@ -28,7 +28,7 @@ public class CustomerHandymanProfileFragment extends Fragment {
         //send handyman request
         handymanRequestButton = view.findViewById(R.id.handyman_request_button);
         handymanRequestButton.setOnClickListener(o ->{
-            ((CustomerActivity)(getActivity())).loadFragment(new CustomerHandymanRequestFragment(), false);
+            ((CustomerActivity)(getActivity())).loadFragment(new CustomerHandymanRequestFragment(), null);
         });
         return view;
     }

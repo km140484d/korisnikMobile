@@ -3,10 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <include android:id="@+id/index_include_search"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/index_handyman_search_form"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/index_search_recycler"
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical"
+        android:layout_below="@id/index_include_search"/>
 </RelativeLayout>

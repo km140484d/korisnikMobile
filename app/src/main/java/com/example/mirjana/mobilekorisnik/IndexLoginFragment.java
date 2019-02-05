@@ -58,7 +58,7 @@ public class IndexLoginFragment extends Fragment {
             }
         });
         regButton = view.findViewById(R.id.registration_button);
-        regButton.setOnClickListener(l -> ((HandymanActivity) getActivity()).loadFragment(new IndexRegistrationFragment()));
+        regButton.setOnClickListener(l -> ((IndexActivity) getActivity()).loadFragment(new IndexRegistrationFragment()));
 
         return view;
     }

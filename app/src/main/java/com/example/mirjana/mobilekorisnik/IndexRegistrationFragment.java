@@ -6,19 +6,13 @@ import android.support.v4.app.*;
 import android.view.*;
 import android.widget.*;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.text.*;
+import java.util.*;
 
 import beans.*;
 import database.*;
 
-import static android.content.Context.LAYOUT_INFLATER_SERVICE;
-
 public class IndexRegistrationFragment extends Fragment {
-
     private EditText nameEdit;
     private EditText surnameEdit;
     private EditText accountEdit;
@@ -32,7 +26,6 @@ public class IndexRegistrationFragment extends Fragment {
     private RadioButton userButton;
 
     private Button saveButton;
-    private Button cancelButton;
 
     //bean objects
     private Customer.CreditCard creditCard;
@@ -86,37 +79,47 @@ public class IndexRegistrationFragment extends Fragment {
 
         saveButton = view.findViewById(R.id.user_registration_save);
         saveButton.setOnClickListener(l -> {
-            if (jobEdit.getVisibility() == View.GONE) {
-                DB.addCustomer(customer);
+            //TODO: check to see if Account is set -> if not show job popupWindow
+            User user = customer;
+            if (jobEdit.getVisibility() == View.VISIBLE) {
+                user = handyman;
+            }
+            user.setName(nameEdit.getText().toString());
+            user.setSurname(surnameEdit.getText().toString());
+            user.setEmail(emailEdit.getText().toString());
+            user.setPhone(phoneEdit.getText().toString());
+            user.setComment(commentEdit.getText().toString());
+            if (user instanceof Customer){
+                DB.getDBInstance().addCustomer((Customer)user);
                 DB.getDBInstance().setCurrentCustomer(customer);
-            } else {
-                DB.getDBInstance().addHandyman(handyman);
+            }else{
+                DB.getDBInstance().addCustomer((Customer)user);
                 DB.getDBInstance().setCurrentHandyman(handyman);
             }
+            ((IndexActivity)getActivity()).loadFragment(new IndexLoginFragment());
         });
-        cancelButton = view.findViewById(R.id.user_registration_cancel);
         return view;
     }
 
     private void showJobPopup(View view) {
-        View popupView = LayoutInflater.from(getContext()).inflate(R.layout.user_credit_card_form, null);
-        final PopupWindow popupWindow = new PopupWindow(popupView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
-        TableLayout jobTable = popupView.findViewById(R.id.registration_job_table);
-
-
-
-        Button saveButton = popupView.findViewById(R.id.credit_card_save);
-        saveButton.setOnClickListener(l ->{
-            popupWindow.dismiss();
-        });
-        Button cancelButton = popupView.findViewById(R.id.credit_card_cancel);
-        cancelButton.setOnClickListener(l -> popupWindow.dismiss());
-
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-        popupView.setOnTouchListener((v, event) -> {
-            popupWindow.dismiss();
-            return true;
-        });
+//        View popupView = LayoutInflater.from(getContext()).inflate(R.layout.user_credit_card_form, null);
+//        final PopupWindow popupWindow = new PopupWindow(popupView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
+//        TableLayout jobTable = popupView.findViewById(R.id.registration_job_table);
+//
+//
+//
+//        Button saveButton = popupView.findViewById(R.id.credit_card_save);
+//        saveButton.setOnClickListener(l ->{
+//            popupWindow.dismiss();
+//        });
+//        Button cancelButton = popupView.findViewById(R.id.credit_card_cancel);
+//        cancelButton.setOnClickListener(l -> popupWindow.dismiss());
+//
+//        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+//        popupView.setOnTouchListener((v, event) -> {
+//            popupWindow.dismiss();
+//            return true;
+//        });
     }
 
     public void showCreditCardPopup(View view) {

@@ -34,6 +34,7 @@ public class User {
     private String surname;
     private String phone;
     private String email;
+    private String comment;
     private Account account;
 
     public User(){}
@@ -84,6 +85,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public Account getAccount() {

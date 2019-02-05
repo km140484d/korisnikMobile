@@ -51,7 +51,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:orientation="vertical">
 
                         <TextView
@@ -96,7 +96,9 @@
                             android:layout_marginBottom="@dimen/search_layout_margin"
                             android:numStars="5"
                             android:rating="4"
-                            android:stepSize="1.0" />
+                            android:stepSize="1.0"
+                            android:scaleX="1.25"
+                            android:scaleY="1.25"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -137,7 +139,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:textSize="10sp"/>
+                                android:padding="3dp"
+                                android:inputType="numberDecimal"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -150,10 +153,11 @@
 
                             <EditText
                                 android:id="@+id/price_max_edit"
-                                android:textSize="10sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                android:padding="3dp"
+                                android:inputType="numberDecimal"/>
                         </LinearLayout>
 
                         <TextView
@@ -171,11 +175,14 @@
 
                             <EditText
                                 android:id="@+id/date_min_edit"
-                                android:textSize="10sp"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:drawableRight="@drawable/ic_date_black" />
+                                android:drawableRight="@drawable/ic_date_black"
+                                android:padding="3dp"
+                                android:inputType="datetime"
+                                android:hint="dd/mm/yy"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -188,11 +195,14 @@
 
                             <EditText
                                 android:id="@+id/date_max_edit"
-                                android:textSize="10sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:drawableRight="@drawable/ic_date_black" />
+                                android:drawableRight="@drawable/ic_date_black"
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:inputType="datetime"
+                                android:hint="dd/mm/yy"/>
                         </LinearLayout>
 
                         <TextView
@@ -210,10 +220,11 @@
 
                             <EditText
                                 android:id="@+id/experience_min_edit"
-                                android:textSize="10sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                android:padding="3dp"
+                                android:inputType="number"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -226,14 +237,16 @@
 
                             <EditText
                                 android:id="@+id/experience_max_edit"
-                                android:textSize="10sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                android:padding="3dp"
+                                android:inputType="number"/>
                         </LinearLayout>
 
                         <Button
-                            android:layout_width="125dp"
+                            android:id="@+id/search_handymen_button"
+                            android:layout_width="130dp"
                             android:layout_height="35dp"
                             android:layout_margin="5dp"
                             android:background="@drawable/button_css"

@@ -1,6 +1,8 @@
 package com.example.mirjana.mobilekorisnik;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.*;
 import android.support.v7.widget.RecyclerView;
 import android.view.*;
@@ -11,6 +13,8 @@ import java.util.List;
 import beans.*;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder>{
+
+    public static final String SEARCH_HANDYMAN_KEY = "SEARCH_HANDYMAN_KEY";
 
     private List<Handyman> handymen;
     private Context context;
@@ -40,6 +44,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             viewHolder.getProfileButton().setVisibility(View.GONE);
             viewHolder.getRequestButton().setVisibility(View.GONE);
         }
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(SEARCH_HANDYMAN_KEY, handymen.get(i));
+        viewHolder.getProfileButton().setOnClickListener(c -> {
+            ((CustomerActivity)(context)).loadFragment(new CustomerHandymanProfileFragment(), bundle);
+        });
     }
 
     @Override
@@ -61,9 +70,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             jobText = itemView.findViewById(R.id.search_item_job);
             ratingBar = itemView.findViewById(R.id.search_item_rating_bar);
             profileButton = itemView.findViewById(R.id.profile_item_button);
-            profileButton.setOnClickListener(c -> {
-                ((CustomerActivity)(context)).loadFragment(new CustomerHandymanProfileFragment(), false);
-            });
+
             requestButton = itemView.findViewById(R.id.mail_item_button);
         }
 

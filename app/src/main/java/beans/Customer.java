@@ -57,7 +57,6 @@ public class Customer extends User{
 
 
     private CreditCard creditCard;
-    private String comment;
     private Integer rank;
     private List<Request> requests = new ArrayList<>();
     private List<Handyman> favoriteHandymen = new ArrayList<>();
@@ -67,7 +66,6 @@ public class Customer extends User{
     public Customer(String name, String surname, String phone, String email,
                     String username, String password, String comment){
         super(name, surname, phone, email, username, password);
-        this.comment = comment;
         this.rank = 1;
     }
 
@@ -77,14 +75,6 @@ public class Customer extends User{
 
     public void setCreditCard(CreditCard creditCard) {
         this.creditCard = creditCard;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
     }
 
     public Integer getRank() {

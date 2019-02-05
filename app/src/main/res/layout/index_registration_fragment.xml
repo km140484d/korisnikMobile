@@ -209,19 +209,19 @@
                         android:textColor="@color/colorWhite"
                         android:textSize="16sp" />
 
-                    <Button
-                        android:id="@+id/user_registration_cancel"
-                        android:layout_width="155dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:background="@drawable/button_css"
-                        android:drawableRight="@drawable/ic_cancel_white"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="@string/cancel"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="16sp" />
+                    <!--<Button-->
+                        <!--android:id="@+id/user_registration_cancel"-->
+                        <!--android:layout_width="155dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_margin="5dp"-->
+                        <!--android:background="@drawable/button_css"-->
+                        <!--android:drawableRight="@drawable/ic_cancel_white"-->
+                        <!--android:paddingLeft="10dp"-->
+                        <!--android:paddingRight="10dp"-->
+                        <!--android:text="@string/cancel"-->
+                        <!--android:textAlignment="textStart"-->
+                        <!--android:textColor="@color/colorWhite"-->
+                        <!--android:textSize="16sp" />-->
                 </LinearLayout>
 
             </LinearLayout>

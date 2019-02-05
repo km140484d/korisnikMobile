@@ -19,19 +19,15 @@ public class CustomerActivity extends AppCompatActivity {
             boolean visible = false;
             switch (item.getItemId()) {
                 case R.id.customer_search_tab:
-                    visible = true;
                     fragment = new CustomerSearchFragment();
                     break;
                 case R.id.customer_requests_tab:
-                    findViewById(R.id.customer_search_include).setVisibility(View.GONE);
                     fragment = new CustomerRequestsFragment();
                     break;
                 case R.id.customer_favorites_tab:
-                    findViewById(R.id.customer_search_include).setVisibility(View.GONE);
                     fragment = new CustomerFavoritesFragment();
                     break;
                 case R.id.customer_edit_tab:
-                    findViewById(R.id.customer_search_include).setVisibility(View.GONE);
                     fragment = new CustomerEditFragment();
                     break;
                 case R.id.customer_log_out_tab:
@@ -39,18 +35,19 @@ public class CustomerActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
             }
-            return loadFragment(fragment, visible);
+            return loadFragment(fragment, null);
         }
     };
 
-    public boolean loadFragment(Fragment fragment, boolean visible) {
+    public boolean loadFragment(Fragment fragment, Bundle bundle) {
         //switching fragment
         if (fragment != null) {
+            if (bundle != null)
+                fragment.setArguments(bundle);
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.customer_frame_layout, fragment)
                     .addToBackStack(null).commit();
-            findViewById(R.id.customer_search_include).setVisibility(visible ? View.VISIBLE : View.GONE);
             return true;
         }
         return false;
@@ -63,7 +60,7 @@ public class CustomerActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = findViewById(R.id.customer_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        loadFragment(new CustomerSearchFragment(),true);
+        loadFragment(new CustomerSearchFragment(), null);
 
     }
 

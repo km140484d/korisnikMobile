@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
+    <include android:id="@+id/customer_include_search"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/index_handyman_search_form"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/customer_search_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"/>
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_below="@id/customer_include_search"/>
 </RelativeLayout>

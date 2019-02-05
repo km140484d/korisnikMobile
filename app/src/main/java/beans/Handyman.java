@@ -1,8 +1,9 @@
 package beans;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Handyman extends User{
+public class Handyman extends User implements Serializable {
     private static int jobStId = 0;
 
     public class Job{

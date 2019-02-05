@@ -190,5 +190,20 @@ public class DB {
         return null;
     }
 
+    public List<String> jobsToString(){
+        List<String> descr = new ArrayList<>();
+        for(Occupation o: occupations)
+            descr.add(o.getWork());
+        descr.add(0, "");
+        return descr;
+    }
 
+
+    public List<String> skillsToString() {
+        List<String> descr = new ArrayList<>();
+        for(Skill skill: skills)
+            descr.add(skill.getDescription());
+        descr.add(0, "");
+        return descr;
+    }
 }

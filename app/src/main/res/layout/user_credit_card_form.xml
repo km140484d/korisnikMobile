@@ -60,7 +60,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:inputType="datetime"/>
+                        android:inputType="datetime"
+                        android:hint="MM/YY"/>
                 </LinearLayout>
 
                 <LinearLayout

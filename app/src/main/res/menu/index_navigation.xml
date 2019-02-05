@@ -14,5 +14,5 @@
     <item
         android:id="@+id/index_search_tab"
         android:icon="@drawable/ic_search_white"
-        android:title="@string/handyman_search" />
+        android:title="@string/search" />
 </menu>

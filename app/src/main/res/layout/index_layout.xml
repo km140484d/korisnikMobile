@@ -18,13 +18,13 @@
         app:menu="@menu/index_navigation"
         android:layout_weight="0"/>
 
-    <include
-        android:id="@+id/index_search_include"
-        layout="@layout/index_handyman_search_form"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_weight="0"/>
+    <!--<include-->
+        <!--android:id="@+id/index_search_include"-->
+        <!--layout="@layout/index_handyman_search_form"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_weight="0"/>-->
     <FrameLayout
         android:id="@+id/index_frame_layout"
         android:layout_width="match_parent"

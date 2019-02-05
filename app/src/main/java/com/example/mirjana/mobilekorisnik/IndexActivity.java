@@ -17,22 +17,19 @@ public class IndexActivity extends AppCompatActivity {
             Fragment fragment = null;
             switch (item.getItemId()) {
                 case R.id.login_tab:
-                    findViewById(R.id.index_search_include).setVisibility(View.GONE);
                     fragment = new IndexLoginFragment();
                     break;
                 case R.id.registration_tab:
-                    findViewById(R.id.index_search_include).setVisibility(View.GONE);
                     fragment = new IndexRegistrationFragment();
                     break;
                 case R.id.index_search_tab:
-                    findViewById(R.id.index_search_include).setVisibility(View.VISIBLE);
                     fragment = new IndexSearchFragment();
             }
             return loadFragment(fragment);
         }
     };
 
-    private boolean loadFragment(Fragment fragment) {
+    public boolean loadFragment(Fragment fragment) {
         //switching fragment
         if (fragment != null) {
             getSupportFragmentManager()
