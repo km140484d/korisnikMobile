@@ -11,7 +11,6 @@ import android.widget.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import beans.Handyman;
 import beans.Skill;
@@ -20,8 +19,8 @@ import database.DB;
 
 public class IndexSearchFragment extends Fragment {
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    protected RecyclerView mRecyclerView;
+    protected RecyclerView.Adapter mAdapter;
 
     private Spinner jobSpinner;
     private SeekBar urgencySeekbar;
@@ -104,6 +103,7 @@ public class IndexSearchFragment extends Fragment {
 
             }
             mAdapter = new SearchAdapter(filteredHandymen, getContext(), true);
+//            ((SearchAdapter)mAdapter).setIndexSearch(true);
             mRecyclerView.setAdapter(mAdapter);
         });
         return view;

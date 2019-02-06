@@ -1,84 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="5dp">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:paddingTop="15dp">
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="5dp"
-            android:layout_margin="5dp"
-            android:layout_weight="1">
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+                android:id="@+id/account_registration_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:orientation="horizontal"
+                android:paddingTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:labelFor="@id/username_reg_edit"
+                        android:text="@string/username"
+                        android:textColor="@color/colorGrey" />
+
+                    <EditText
+                        android:id="@+id/username_reg_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:labelFor="@id/password_reg_edit"
+                        android:text="@string/password"
+                        android:textColor="@color/colorGrey" />
+
+                    <EditText
+                        android:id="@+id/password_reg_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:labelFor="@id/password_confirmed_reg_edit"
+                        android:text="@string/password_confirmed"
+                        android:textColor="@color/colorGrey" />
+
+                    <EditText
+                        android:id="@+id/password_confirmed_reg_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_below="@id/account_registration_linear_layout">
+
+                <Button
+                    android:id="@+id/registration_account_save"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_css"
+                    android:drawableRight="@drawable/ic_save_white"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/save"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/registration_account_cancel"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_css"
+                    android:drawableRight="@drawable/ic_cancel_white"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/cancel"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/username_reg_edit"
-                android:text="@string/username"
-                android:textColor="@color/colorGrey" />
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:background="#ffffff"
+                android:text="@string/account"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="italic" />
 
-            <EditText
-                android:id="@+id/username_reg_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"/>
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="5dp"
-            android:layout_margin="5dp"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:labelFor="@id/password_reg_edit"
-                android:text="@string/password"
-                android:textColor="@color/colorGrey" />
-
-            <EditText
-                android:id="@+id/password_reg_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:labelFor="@id/password_confirmed_reg_edit"
-                android:text="@string/password_confirmed"
-                android:textColor="@color/colorGrey" />
-
-            <EditText
-                android:id="@+id/password_confirmed_reg_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"/>
-
-        </LinearLayout>
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="@string/account"
-        android:layout_marginLeft="15dp"
-        android:background="#ffffff"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimary"/>
-
-</RelativeLayout>
+</LinearLayout>

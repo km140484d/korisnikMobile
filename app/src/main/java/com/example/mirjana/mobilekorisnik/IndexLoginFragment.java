@@ -39,22 +39,24 @@ public class IndexLoginFragment extends Fragment {
                     message = getResources().getString(R.string.password_empty);
                 Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
             } else {
-                User user = DB.getDBInstance().findUser(username, password);
+                User user = DB.getDBInstance().findUser(username);
                 if (user == null)
                     Toast.makeText(getContext(), getResources().getString(R.string.invalid_user), Toast.LENGTH_SHORT).show();
                 else {
                     if (!user.getAccount().getPassword().equals(password))
                         Toast.makeText(getContext(), getResources().getString(R.string.invalid_password), Toast.LENGTH_SHORT).show();
                     else {
-                        if (user instanceof Customer)
+                        Intent intent = null;
+                        if (user instanceof Customer) {
                             DB.getDBInstance().setCurrentCustomer((Customer) user);
-                        else
+                            intent = new Intent(getActivity(), CustomerActivity.class);
+                        }else {
                             DB.getDBInstance().setCurrentHandyman((Handyman) user);
-                        Intent intent = new Intent(getActivity(), HandymanActivity.class);
+                            intent = new Intent(getActivity(), HandymanActivity.class);
+                        }
                         startActivity(intent);
                     }
                 }
-
             }
         });
         regButton = view.findViewById(R.id.registration_button);

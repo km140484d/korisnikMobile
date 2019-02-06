@@ -43,6 +43,14 @@ public class IndexRegistrationFragment extends Fragment {
         nameEdit = view.findViewById(R.id.name_edit);
         surnameEdit = view.findViewById(R.id.surname_edit);
         accountEdit = view.findViewById(R.id.account_edit);
+        accountEdit.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (accountEdit.getRight() - accountEdit.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    showAccountPopup(view);
+                }
+            }
+            return true;
+        });
         phoneEdit = view.findViewById(R.id.phone_edit);
         emailEdit = view.findViewById(R.id.email_edit);
         cardEdit = view.findViewById(R.id.credit_card_edit);
@@ -81,24 +89,72 @@ public class IndexRegistrationFragment extends Fragment {
         saveButton.setOnClickListener(l -> {
             //TODO: check to see if Account is set -> if not show job popupWindow
             User user = customer;
-            if (jobEdit.getVisibility() == View.VISIBLE) {
+            if (jobEdit.getVisibility() == View.VISIBLE)
                 user = handyman;
+            if (user.getAccount() == null){
+                showAccountPopup(view);
+                Toast.makeText(getContext(), getResources().getString(R.string.account_info), Toast.LENGTH_SHORT).show();
+            }else {
+                user.setName(nameEdit.getText().toString());
+                user.setSurname(surnameEdit.getText().toString());
+                user.setEmail(emailEdit.getText().toString());
+                user.setPhone(phoneEdit.getText().toString());
+                user.setComment(commentEdit.getText().toString());
+                if (nameEdit.getText().toString().isEmpty() || surnameEdit.getText().toString().isEmpty() ||
+                    emailEdit.getText().toString().isEmpty() || phoneEdit.getText().toString().isEmpty())
+                    Toast.makeText(getContext(), getResources().getString(R.string.account_empty), Toast.LENGTH_SHORT).show();
+                else {
+                    if (user instanceof Customer) {
+                        DB.getDBInstance().addCustomer((Customer) user);
+                        DB.getDBInstance().setCurrentCustomer(customer);
+                    } else {
+                        DB.getDBInstance().addHandyman((Handyman) user);
+                        DB.getDBInstance().setCurrentHandyman(handyman);
+                    }
+                }
+                ((IndexActivity) getActivity()).loadFragment(new IndexLoginFragment());
             }
-            user.setName(nameEdit.getText().toString());
-            user.setSurname(surnameEdit.getText().toString());
-            user.setEmail(emailEdit.getText().toString());
-            user.setPhone(phoneEdit.getText().toString());
-            user.setComment(commentEdit.getText().toString());
-            if (user instanceof Customer){
-                DB.getDBInstance().addCustomer((Customer)user);
-                DB.getDBInstance().setCurrentCustomer(customer);
-            }else{
-                DB.getDBInstance().addCustomer((Customer)user);
-                DB.getDBInstance().setCurrentHandyman(handyman);
-            }
-            ((IndexActivity)getActivity()).loadFragment(new IndexLoginFragment());
         });
         return view;
+    }
+
+    private void showAccountPopup(View view) {
+        View popupView = LayoutInflater.from(getContext()).inflate(R.layout.user_account_form, null);
+        final PopupWindow popupWindow = new PopupWindow(popupView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
+        EditText usernameEdit = popupView.findViewById(R.id.username_reg_edit);
+        EditText passEdit = popupView.findViewById(R.id.password_reg_edit);
+        EditText passConfirmedEdit = popupView.findViewById(R.id.password_confirmed_reg_edit);
+        Button saveButton = popupView.findViewById(R.id.registration_account_save);
+        saveButton.setOnClickListener(l ->{
+            String username = usernameEdit.getText().toString();
+            String pass = passEdit.getText().toString();
+            String passConfirmed = passConfirmedEdit.getText().toString();
+            if (username.isEmpty())
+                Toast.makeText(getContext(), getResources().getString(R.string.username_empty), Toast.LENGTH_SHORT).show();
+            else
+                if (pass.isEmpty())
+                    Toast.makeText(getContext(), getResources().getString(R.string.password_empty), Toast.LENGTH_SHORT).show();
+                else
+                    if (DB.getDBInstance().findUser(username) != null)
+                        Toast.makeText(getContext(), getResources().getString(R.string.user_exists), Toast.LENGTH_SHORT).show();
+                    else
+                        if (!pass.equals(passConfirmed))
+                            Toast.makeText(getContext(), getResources().getString(R.string.unmatching_passwords), Toast.LENGTH_SHORT).show();
+                        else{
+                            customer.setAccount(customer.new Account(username, pass));
+                            handyman.setAccount(handyman.new Account(username, pass));
+                            popupWindow.dismiss();
+                        }
+        });
+        Button cancelButton = popupView.findViewById(R.id.registration_account_cancel);
+        cancelButton.setOnClickListener(l -> popupWindow.dismiss());
+
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+        popupView.setOnTouchListener((v, event) -> {
+            popupWindow.dismiss();
+            return true;
+        });
+
     }
 
     private void showJobPopup(View view) {

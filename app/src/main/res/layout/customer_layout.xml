@@ -18,12 +18,12 @@
         app:menu="@menu/customer_navigation"
         android:layout_weight="0"/>
 
-    <include
-        android:id="@+id/customer_search_include"
-        layout="@layout/index_handyman_search_form"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"/>
+    <!--<include-->
+        <!--android:id="@+id/customer_search_include"-->
+        <!--layout="@layout/index_handyman_search_form"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="0"/>-->
     <FrameLayout
         android:id="@+id/customer_frame_layout"
         android:layout_width="match_parent"

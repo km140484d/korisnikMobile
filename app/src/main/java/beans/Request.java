@@ -1,9 +1,13 @@
 package beans;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Request implements Comparable<Request>{
+
+    private static final String FORMAT = "dd/MM/yy hh:mm";
+    private SimpleDateFormat formatter = new SimpleDateFormat(FORMAT);
 
     @Override
     public int compareTo(Request o) {
@@ -178,5 +182,9 @@ public class Request implements Comparable<Request>{
 
     public void setCanceledDate(Date canceledDate) {
         this.canceledDate = canceledDate;
+    }
+
+    public String formattedDate(Date date){
+        return formatter.format(date);
     }
 }

@@ -20,7 +20,7 @@ public class CustomerFavoritesFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.customer_favorites_recycler);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mAdapter = new FavoritesAdapter(DB.getDBInstance().getHandymen(), getContext());
+        mAdapter = new FavoritesAdapter(DB.getDBInstance().getCurrentCustomer().getFavoriteHandymen(), getContext());
         mRecyclerView.setAdapter(mAdapter);
         return view;
     }

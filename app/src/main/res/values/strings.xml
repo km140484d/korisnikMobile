@@ -74,4 +74,11 @@
     <string name="password_empty">Morate uneti lozinku!</string>
     <string name="invalid_user">Ne postoji korisnik sa unetim nalogom!</string>
     <string name="invalid_password">Pogrešna lozinka.</string>
+    <string name="title_activity_mapa_obrisi_me">Map</string>
+    <string name="user_exists">Korisnički nalog već postoji!</string>
+    <string name="unmatching_passwords">Lozinke se ne podudaraju!</string>
+    <string name="account_info">Morate popuniti informacije o nalogu klikom na ikonicu!</string>
+    <string name="account_empty">Morate popuniti sva polja forme kako biste se registrovali!</string>
+    <string name="empty_fields">Morate popuniti sva polja forme!</string>
+    <string name="invalid_date">Neodgovarajući format datuma.</string>
 </resources>

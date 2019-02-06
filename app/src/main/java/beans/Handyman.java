@@ -97,6 +97,15 @@ public class Handyman extends User implements Serializable {
         return str;
     }
 
+    public String skillsToString(){
+        String str = "";
+        for(Skill skill: skills){
+            str = (str.isEmpty() ? "" : str + ", ");
+            str += skill.getDescription();
+        }
+        return str;
+    }
+
     public float getAverageRating(){
         float avg = 0.0f;
         for(Job job: jobs)

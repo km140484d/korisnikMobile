@@ -20,7 +20,7 @@ public class CustomerRequestsFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.customer_requests_recycler);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mAdapter = new RequestsAdapter(null, getContext());
+        mAdapter = new RequestsAdapter(getContext());
         mRecyclerView.setAdapter(mAdapter);
         return view;
     }

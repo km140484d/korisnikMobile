@@ -5,14 +5,14 @@
     android:layout_margin="5dp"
     android:padding="5dp">
     <LinearLayout
+        android:id="@+id/customer_requests_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/border"
         android:layout_marginTop="10dp"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        >
+        android:paddingRight="10dp">
         <LinearLayout
             android:id="@+id/request_basic_linear_layout"
             android:layout_width="match_parent"

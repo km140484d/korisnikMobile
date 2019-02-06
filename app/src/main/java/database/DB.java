@@ -1,5 +1,7 @@
 package database;
 
+import com.example.mirjana.mobilekorisnik.R;
+
 import beans.*;
 
 import java.time.LocalDate;
@@ -79,6 +81,11 @@ public class DB {
         currentHandyman.setJobs(jobs);
         handymen.add(currentHandyman);
 
+        Request request = new Request(currentCustomer, currentHandyman, jobs.get(1),
+                "Rakovica", "Nikole Marakovica", DB.getDBInstance().currentDate(),
+                DB.getDBInstance().currentDate(), 2.0, true);
+        request.setCurrentState(Request.RequestStates.REALIZOVAN);
+
         currentHandyman = new Handyman("Dane", "Nikolić", "0645556667", "dane@gmail.com",
                 "danen", "123", skills.subList(2, 3));
         jobs = new ArrayList<>();
@@ -147,8 +154,9 @@ public class DB {
         DB.currentHandyman = currentHandyman;
     }
 
-    public Handyman.Job findJob(String job) {
-        for (Handyman.Job j : jobs) {
+    public Handyman.Job findJob(Handyman handyman, String job) {
+        List<Handyman.Job> handymanJobs = handyman.getJobs();
+        for (Handyman.Job j : handymanJobs) {
             if (j.getOccupation().getWork().equals(job))
                 return j;
         }
@@ -162,10 +170,11 @@ public class DB {
 
     public static Integer getRequestStateNumber(Request.RequestStates state) {
         List<Request> requests = currentCustomer.getRequests();
+        int cnt = 0;
         for (Request request : requests)
             if (request.getCurrentState().equals(state))
-                requests.add(request);
-        return requests.size();
+                cnt++;
+        return cnt;
     }
 
     public static List<Request> getRequestArchive() {
@@ -174,7 +183,7 @@ public class DB {
         return (requests.size() > 3) ? requests.subList(0, 3) : requests;
     }
 
-    public User findUser(String username, String password){
+    public User findUser(String username){
         User.Account account;
         for(Customer customer: customers){
             account = customer.getAccount();
@@ -188,6 +197,14 @@ public class DB {
                 return handyman;
         }
         return null;
+    }
+
+    public List<String> handymanJobs(List<Handyman.Job> handymanJobs){
+        List<String> descr = new ArrayList<>();
+        for (Handyman.Job job : handymanJobs)
+            descr.add(job.getOccupation().getWork());
+        descr.add(0, "");
+        return descr;
     }
 
     public List<String> jobsToString(){

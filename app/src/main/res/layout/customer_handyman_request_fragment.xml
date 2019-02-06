@@ -82,8 +82,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableEnd="@drawable/ic_date_black"
-                            android:textSize="12sp"
-                            android:inputType="datetime"/>
+                            android:inputType="datetime"
+                            android:padding="7dp"
+                            android:hint="dd/MM/yy hh:mm"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -203,7 +204,7 @@
                         android:id="@+id/request_county"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp" />
+                        android:padding="3dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -216,7 +217,7 @@
                         android:id="@+id/request_street"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp" />
+                        android:padding="3dp"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -239,6 +240,7 @@
                 android:gravity="center_horizontal">
 
                 <Button
+                    android:id="@+id/request_send_button"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -252,6 +254,7 @@
                     android:textSize="16sp" />
 
                 <Button
+                    android:id="@+id/request_cancel_button"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"

@@ -4,8 +4,14 @@ import android.os.Bundle;
 import android.support.annotation.*;
 import android.support.v4.app.Fragment;
 import android.view.*;
+import android.widget.*;
+
+import beans.*;
+import constants.Constants;
 
 public class HandymanCustomerProfileFragment extends Fragment {
+
+
 
     @Nullable
     @Override

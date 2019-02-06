@@ -11,18 +11,22 @@ import android.widget.*;
 import java.util.List;
 
 import beans.*;
+import constants.Constants;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder>{
 
-    public static final String SEARCH_HANDYMAN_KEY = "SEARCH_HANDYMAN_KEY";
 
     private List<Handyman> handymen;
     private Context context;
-    private boolean indexSearch;
+    private boolean indexSearch = false;
 
     public SearchAdapter(List<Handyman> handymen, Context context, boolean indexSearch){
         this.handymen = handymen;
         this.context = context;
+        this.indexSearch = indexSearch;
+    }
+
+    public void setIndexSearch(boolean indexSearch) {
         this.indexSearch = indexSearch;
     }
 
@@ -45,9 +49,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             viewHolder.getRequestButton().setVisibility(View.GONE);
         }
         Bundle bundle = new Bundle();
-        bundle.putSerializable(SEARCH_HANDYMAN_KEY, handymen.get(i));
+        bundle.putSerializable(Constants.SEARCH_HANDYMAN_KEY, handymen.get(i));
         viewHolder.getProfileButton().setOnClickListener(c -> {
             ((CustomerActivity)(context)).loadFragment(new CustomerHandymanProfileFragment(), bundle);
+        });
+        viewHolder.getRequestButton().setOnClickListener(c -> {
+            ((CustomerActivity)(context)).loadFragment(new CustomerHandymanRequestFragment(), bundle);
         });
     }
 

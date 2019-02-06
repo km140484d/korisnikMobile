@@ -36,13 +36,13 @@ class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder>
         viewHolder.getRequestsDeniedView().setText(DB.getDBInstance().getRequestStateNumber(Request.RequestStates.ODBIJEN) + "");
         List<Request> requests = DB.getRequestArchive();
         if (requests.size() > 0){
-            viewHolder.getFirstDate().setText(requests.get(0).getRequestDate() + "");
+            viewHolder.getFirstDate().setText(requests.get(0).formattedDate(requests.get(0).getRequestDate()));
             viewHolder.getFirstStatus().setText(requests.get(0).getCurrentState().toString());
             if (requests.size() > 1){
-                viewHolder.getSecondDate().setText(requests.get(1).getRequestDate() + "");
+                viewHolder.getSecondDate().setText(requests.get(1).formattedDate(requests.get(1).getRequestDate()));
                 viewHolder.getSecondStatus().setText(requests.get(1).getCurrentState().toString());
                 if (requests.size() > 2){
-                    viewHolder.getThirdDate().setText(requests.get(2).getRequestDate() + "");
+                    viewHolder.getThirdDate().setText(requests.get(2).formattedDate(requests.get(2).getRequestDate()));
                     viewHolder.getThirdStatus().setText(requests.get(2).getCurrentState().toString());
                 }
             }
@@ -73,8 +73,17 @@ class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder>
             super(itemView);
             handymanNameText = itemView.findViewById(R.id.favorite_item_name);
             facebookButton = itemView.findViewById(R.id.favorite_item_facebook);
+            facebookButton.setOnClickListener(l ->{
+                //TODO: facebook
+            });
             instagramButton = itemView.findViewById(R.id.favorite_item_instagram);
+            instagramButton.setOnClickListener(l ->{
+                //TODO: instagram
+            });
             twitterButton = itemView.findViewById(R.id.favorite_item_twitter);
+            twitterButton.setOnClickListener(l ->{
+                //TODO: twitter
+            });
             requestsRealizedView = itemView.findViewById(R.id.favorite_item_requests_realized);
             requestsDeniedView = itemView.findViewById(R.id.favorite_item_requests_denied);
 

@@ -9,14 +9,15 @@ import android.widget.*;
 import java.util.List;
 
 import beans.*;
+import database.DB;
 
 class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.ViewHolder> {
 
     private List<Request> requests;
     private Context context;
 
-    public RequestsAdapter(List<Request> requests, Context context) {
-        this.requests = requests;
+    public RequestsAdapter(Context context) {
+        this.requests = DB.getCurrentCustomer().getRequests();
         this.context = context;
     }
 
@@ -29,16 +30,44 @@ class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        //TODO: vezati podatke za ViewHoldere
+        Request request = requests.get(i);
+        viewHolder.getJobText().setText(request.getJob().getOccupation().getWork());
+        viewHolder.getNameText().setText(request.getHandyman().getName() + " " + request.getHandyman().getSurname());
+        viewHolder.getAddressText().setText(request.getAddress().getCounty() + ", " + request.getAddress().getStreetNumber());
+        viewHolder.getTimeText().setText(request.getRequestDate().toString());
+        viewHolder.getTimeCreatedText().setText(DB.getDBInstance().currentDate().toString());
+        viewHolder.getStatusText().setText(request.getCurrentState().toString());
+        viewHolder.getCustomerRequestsLayout().setOnClickListener(l ->{
+            if (request.getCurrentState().equals(Request.RequestStates.POSLAT)){
+                viewHolder.showLayout(viewHolder.getCancelLayout());
+                viewHolder.getRequestCanceledButton().setOnClickListener(c ->{
+                    request.setCanceledDate(DB.getDBInstance().currentDate());
+                    request.setCurrentState(Request.RequestStates.OTKAZAN);
+                    viewHolder.getStatusText().setText(request.getCurrentState().toString());
+                    viewHolder.showLayout(viewHolder.getCancelLayout());
+                });
+            }else{
+                if (request.getCurrentState().equals(Request.RequestStates.REALIZOVAN)){
+                    viewHolder.showLayout(viewHolder.getRateLayout());
+                    viewHolder.getRequestRatingButton().setOnClickListener(c -> {
+                        request.setRating(viewHolder.getRequestRatingBar().getRating());
+                        request.setComment(viewHolder.getRequestCommentEdit().getText().toString());
+                        request.setCurrentState(Request.RequestStates.OCENJEN);
+                        viewHolder.getStatusText().setText(request.getCurrentState().toString());
+                        viewHolder.showLayout(viewHolder.getRateLayout());
+                    });
+                }
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        //return requests.size();
-        return 5;
+        return requests.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        private LinearLayout customerRequestsLayout;
         private TextView jobText;
         private TextView nameText;
         private TextView addressText;
@@ -49,7 +78,7 @@ class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.ViewHolder> {
         private Button requestRatingButton;
         private EditText requestCommentEdit;
         private RatingBar requestRatingBar;
-        private LinearLayout rateLayout;  //request_item_rate_layout
+        private LinearLayout rateLayout;
         private LinearLayout cancelLayout;
 
         public ViewHolder(@NonNull View itemView) {
@@ -64,6 +93,7 @@ class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.ViewHolder> {
             requestRatingButton = itemView.findViewById(R.id.request_item_rate_button);
             requestCommentEdit = itemView.findViewById(R.id.request_item_comment);
             requestRatingBar = itemView.findViewById(R.id.request_item_rating_bar);
+            customerRequestsLayout = itemView.findViewById(R.id.customer_requests_linear_layout);
             rateLayout = itemView.findViewById(R.id.request_item_rate_layout);
             cancelLayout = itemView.findViewById(R.id.request_item_cancel_layout);
         }
@@ -108,12 +138,20 @@ class RequestsAdapter extends RecyclerView.Adapter<RequestsAdapter.ViewHolder> {
             return requestRatingBar;
         }
 
+        public LinearLayout getCustomerRequestsLayout() {
+            return customerRequestsLayout;
+        }
+
         public LinearLayout getRateLayout() {
             return rateLayout;
         }
 
         public LinearLayout getCancelLayout() {
             return cancelLayout;
+        }
+
+        public void showLayout(LinearLayout layout){
+            layout.setVisibility(layout.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
         }
     }
 }
