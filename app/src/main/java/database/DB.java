@@ -4,6 +4,7 @@ import com.example.mirjana.mobilekorisnik.R;
 
 import beans.*;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -222,5 +223,12 @@ public class DB {
             descr.add(skill.getDescription());
         descr.add(0, "");
         return descr;
+    }
+
+    private static final String FORMAT = "dd/MM/yy hh:mm";
+    private SimpleDateFormat formatter = new SimpleDateFormat(FORMAT);
+
+    public String formattedDate(Date date){
+        return formatter.format(date);
     }
 }

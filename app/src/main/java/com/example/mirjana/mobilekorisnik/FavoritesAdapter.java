@@ -1,6 +1,8 @@
 package com.example.mirjana.mobilekorisnik;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.*;
 import android.view.*;
@@ -74,15 +76,18 @@ class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder>
             handymanNameText = itemView.findViewById(R.id.favorite_item_name);
             facebookButton = itemView.findViewById(R.id.favorite_item_facebook);
             facebookButton.setOnClickListener(l ->{
-                //TODO: facebook
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com"));
+                context.startActivity(browserIntent);
             });
             instagramButton = itemView.findViewById(R.id.favorite_item_instagram);
             instagramButton.setOnClickListener(l ->{
-                //TODO: instagram
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.instagram.com"));
+                context.startActivity(browserIntent);
             });
             twitterButton = itemView.findViewById(R.id.favorite_item_twitter);
             twitterButton.setOnClickListener(l ->{
-                //TODO: twitter
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.twitter.com"));
+                context.startActivity(browserIntent);
             });
             requestsRealizedView = itemView.findViewById(R.id.favorite_item_requests_realized);
             requestsDeniedView = itemView.findViewById(R.id.favorite_item_requests_denied);

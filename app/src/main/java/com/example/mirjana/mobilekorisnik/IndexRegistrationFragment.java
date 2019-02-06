@@ -192,7 +192,7 @@ public class IndexRegistrationFragment extends Fragment {
                 date = format.parse(cardValidityEdit.getText().toString());
                 creditCard = customer.new CreditCard(cardNumberEdit.getText().toString(), date, cardCodeEdit.getText().toString(), 0.0);
             } catch (ParseException e) {
-                Toast.makeText(getContext(), "date conversion error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getResources().getString(R.string.invalid_date), Toast.LENGTH_SHORT).show();
             }
             popupWindow.dismiss();
         });

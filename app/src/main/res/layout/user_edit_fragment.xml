@@ -44,18 +44,22 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:orientation="vertical">
+
+
+                    <LinearLayout android:id="@+id/update_user_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
                         android:background="@drawable/border"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
+                        android:orientation="horizontal">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:padding="5dp">
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -68,7 +72,7 @@
                                 android:id="@+id/name_edit"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="12sp"/>
+                                android:padding="3dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -81,7 +85,7 @@
                                 android:id="@+id/surname_edit"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="12sp"/>
+                                android:padding="3dp"/>
 
                             <EditText
                                 android:id="@+id/handyman_jobs_edit"
@@ -89,7 +93,6 @@
                                 android:layout_height="wrap_content"
                                 android:drawableRight="@drawable/ic_job_black"
                                 android:hint="@string/credit_card"
-                                android:textSize="12sp"
                                 android:visibility="gone"/>
 
                         </LinearLayout>
@@ -99,8 +102,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:padding="5dp">
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -113,7 +115,7 @@
                                 android:id="@+id/phone_edit"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="12sp"/>
+                                android:padding="3dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -126,17 +128,19 @@
                                 android:id="@+id/email_edit"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="12sp"/>
-
-                            <EditText
-                                android:id="@+id/credit_card_edit"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:drawableRight="@drawable/ic_credit_card"
-                                android:hint="@string/credit_card"
-                                android:textSize="12sp"/>
+                                android:padding="3dp"/>
                         </LinearLayout>
                     </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/credit_card_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_credit_card"
+                        android:hint="@string/credit_card"
+                        android:layout_margin="5dp"/>
+                    </LinearLayout>
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -158,6 +162,7 @@
                 android:layout_margin="5dp"/>
 
             <Button
+                android:id="@+id/update_edit_button"
                 android:layout_width="155dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -168,6 +173,43 @@
                 android:text="@string/edit"
                 android:textColor="@color/colorWhite"
                 android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/update_command_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_below="@id/account_registration_linear_layout">
+
+                <Button
+                    android:id="@+id/update_account_save"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_css"
+                    android:drawableRight="@drawable/ic_save_white"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/save"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/update_account_cancel"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_css"
+                    android:drawableRight="@drawable/ic_cancel_white"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/cancel"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
         </LinearLayout>
 
 
